@@ -1,0 +1,5 @@
+[meta]
+is_python_project = false
+uses_ansible = false
+meta_version = "0.6.dev0"
+project_name = "tema-demo"
