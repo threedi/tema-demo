@@ -11,5 +11,6 @@ repos:
         args: [--allow-multiple-documents]
       - id: check-toml
       - id: check-added-large-files
+        args: ['--maxkb=1000']
 
 ### Extra lines below are preserved ###
