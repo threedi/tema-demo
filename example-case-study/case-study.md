@@ -6,7 +6,7 @@ Note: Reinout, who writes this, hasn't heard anything about specific case studie
 
 ## 1: excessive rainfall is detected
 
-The amount of rainfall was pretty well known beforehand. Lots of rain had already fallen, so the ground was soaked and couldn't absorb any additional rainfall. Then a Real Big Rainfall Event occurred...
+The amount of rainfall in the "Ahr" region was pretty well known beforehand. Lots of rain had already fallen, so the ground was soaked and couldn't absorb any additional rainfall. Then a Real Big Rainfall Event occurred...
 
 For the demo, the rainfall events or predictions should be put into the context broker for us to be able to pick it up with 3Di.
 
@@ -20,18 +20,18 @@ Based upon a good model of the landscape and a good rainfall prediction (=input 
 
 Based on the flood prediction, a prediction of critical locations could be made. I know N&S can do that, but perhaps a project partner can too. Flooding of railways, bridges or important roads ("Bundesstraße") or medical facilities comes to mind.
 
-Such critical locations could really benefit of real-time drone imagery and monitoring. In reality, the upper reaches of the Ahr valley were already dealing with a disaster even though the authorities in the lower reaches were not really aware of what was coming. Their own official downstream measurement equipment never went beyond a certain worrying level as the equipment literally stopped reporting after being ripped out by the flood...
+Such critical locations could really benefit from real-time drone imagery and monitoring. In reality, the upper reaches of the Ahr valley were already dealing with a disaster even though the authorities in the lower reaches were not really aware of what was coming. Their own official downstream measurement equipment never went beyond a certain worrying level as the equipment literally stopped reporting after being ripped out by the flood...
 
 Objective proper real-time flood calculations could really have helped here!
 
 
 ## 4: feedback from critical locatons
 
-I invite you to look at [this video](https://youtu.be/I1MU2Kdnn_s?si=J34Duojrtz6BMhu_&t=75), at that timestamp you'll see below picture. The rectangular section at the bottom left is the submerged railway bridge, the round section at the top is the station building.
+I invite you to look at [this video of Kreuzberg (Ahr)](https://youtu.be/I1MU2Kdnn_s?si=J34Duojrtz6BMhu_&t=75), at that timestamp you'll see below picture. The rectangular section at the bottom left is the submerged railway bridge, the round section at the top is the Kreuzberg station building.
 
 ![Kreuzberg example](kreuzberg1.png)
 
-You'll notice half the camping site blocking the railway bridge arches. To make the situation clearer, here's a picture of the same bridge from my 2015 vacation:
+You'll notice the camping site inventory piled up agains the now-submerged railway bridge arches. To make the situation clearer, here's a picture of the same bridge from my 2015 vacation (this is the downstream side of the bridge):
 
 ![Kreuzberg bridge before the flood](kreuzberg-before.png)
 
@@ -46,7 +46,7 @@ Note that there are historical precedents for this situation! [In 1910](https://
 
 What was previously an arched bridge might be turned into practically a dam due to tree branches and especially campers from the camping site blocking the arches. This can be detected with drones **and fed back into 3Di**.
 
-Such a "dam" instead of a bridge will of course rapidly increase the downstream water levels. Timely warnings might be handy.
+Such a "dam" instead of a bridge will of course rapidly increase the upstream water levels. Timely warnings might be handy.
 
 
 ## 6: reality
@@ -61,7 +61,7 @@ Translated, a train departed the Kreuzberg station (the circle in the first pict
 
 ![Parked train](parked-train.png)
 
-According to personal answers, the aformentioned train was probably scheduled to leave the station between 19:30 and 20:00. This could perhaps be used in the demo! My initial idea was to omit the train bridges from the equation "as the trains would have been shut down already", but apparently I was wrong.
+According to answers I got, the aformentioned train was probably scheduled to leave the station between 19:30 and 20:00. This could perhaps be used in the demo! My initial idea was to omit the train bridges from the equation "as the trains would have been shut down already", but apparently I was wrong.
 
 
 ## 7: possible result
