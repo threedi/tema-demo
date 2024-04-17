@@ -6,7 +6,7 @@ Within the [EU TEMA project](https://tema-project.eu/), [Nelen & Schuurmans](htt
 
 Disaster management also means collaboration, of course. For that purpose, TEMA has provided infrastructure and technology suggestions as a framework for collaboration. The implementation plan in this document shows how we want to use the infrastructure to be able to show a nice realistic demo in cooperation with partners.
 
-I hope this document also helps other partners to get started. For that purpose, it is my intention to keep most of the code open source. Some project-internal IP adresses and URLs will probably be hidden away in a private repo of course. You can email [reinout.vanrees@nelenschuurmans.nl](mailto:reinout.vanrees@nelen-schuurmans.nl) if you need access.
+I hope this document also helps other partners to get started. For that purpose, it is my intention to keep most of the code open source (and thus visible). Some project-internal IP adresses and URLs will probably be hidden away in a private repo of course. You can email [reinout.vanrees@nelenschuurmans.nl](mailto:reinout.vanrees@nelen-schuurmans.nl) if you need access.
 
 
 ## Provided infrastructure
@@ -19,8 +19,6 @@ Both context broker ("CB") and the K3S cluster are hidden away behind a firewall
 
 
 ## Context broker: custom vocabulary
-
-In the early 2000's (when XML was still popular) in a totally different EU project (eConstruct), I worked on my PhD thesis and [on semantic web vocabularies](https://reinout.vanrees.org/thesis/node39.html).
 
 In the context broker, we'll need to store information. Information that needs terms and definitions because of its "linked data" nature. So if we want to talk about a `RegionAtRisk`, we'll need to define.
 
@@ -47,9 +45,6 @@ Some initial ideas (all with proper urls instead of just words, of course):
         y1=...
         x2=...
         y2=...
-
-
-TODO: suggested terms
 
 
 ## K3S part 1a: *context broker* target 'flask' docker
@@ -110,4 +105,4 @@ Our main focus is improving the actual "3Di" flood calcuation software. What I'm
 
 ## Possible case study
 
-I'm throwing in [a possible case study](case-study.md).
+I'm throwing in [a possible case study](case-study.md) just to make the possible data flows a bit more concrete.
