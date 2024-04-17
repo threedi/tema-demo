@@ -20,7 +20,7 @@ Both context broker ("CB") and the K3S cluster are hidden away behind a firewall
 
 ## Setup
 
-The sketch below shows the suggested setup, followed by the textual explanation of the various parts. Basically we use the context broker in combination with a custom vocabulary + three small dockers inside the K3S cluster + our own S3 storage for shuttling info back and forth.
+The sketch below shows the suggested setup, followed by the textual explanation of the various parts. Basically we use the context broker in combination with a custom vocabulary + three **small and simple** dockers inside the K3S cluster + our own S3 storage for shuttling info back and forth.
 
 ![Sketch of the suggested setup](suggested-setup.png)
 
