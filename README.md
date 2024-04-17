@@ -28,6 +28,27 @@ If there's already a suitable vocabulary, we can use it. But at first we're prob
 
 We'll start such a bare-bones vocabulary and host it somewhere public. If handy, others can extend it or start their own.
 
+Some initial ideas (all with proper urls instead of just words, of course):
+
+    weather-occurrence
+        id=abcd
+        region = ahr
+        timestamp = 2021-07-xx
+        rainfall-data = s3://amaazon.com/xxx/something.tiff
+
+    flood-calculation
+        weather-occurrence=http://tema.it/weather-occurrence/abcd
+        result=s3://amazon.com/s3/xxx/something.zip
+
+    disturbance
+        3di-scenario=https://www.3di.live/scenario/xyz
+        height=235
+        x1=...
+        y1=...
+        x2=...
+        y2=...
+
+
 TODO: suggested terms
 
 
