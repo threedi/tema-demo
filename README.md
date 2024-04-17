@@ -11,8 +11,7 @@ I hope this document also helps other partners to get started. For that purpose,
 
 ## Provided infrastructure
 
-- A **context broker** implemented in [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD). Basically a semantic web storage. I've written a [summary on my blog](https://reinout.vanrees.org/weblog/2024/04/16/tema-workshop-json-ld.html) of a TEMA workshop on that topic that should give a pretty good introduction.
-
+- A **context broker** implemented in [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD). Basically a semantic web storage. I've written a [summary on my blog](https://reinout.vanrees.org/weblog/2024/04/16/tema-workshop-json-ld.html) of a TEMA workshop on that topic that should give a pretty good introduction. The context broker is the central information exchange mechanism for the whole project. If we need weather forecasts, we'll ask the CB to send us new ones added by other project partners. If we have flood calculation results, we'll put their info into the CB for others to query.
 - **K3S**, a simple but powerful kubernetes cluster. According to what I gathered, you can connect your own kubernetes nodes but you can also use the provided infrastructure. You can use it to run servers or scripts, provided you "dockerize" them and know how to deploy those dockers to the cluster.
 
 Both context broker ("CB") and the K3S cluster are hidden away behind a firewall, btw.
