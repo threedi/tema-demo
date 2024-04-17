@@ -1,6 +1,6 @@
 # Reinout's case study/proposal
 
-Note: Reinout, who write this, hasn't heard anything about specific case studies, apart from "the Ahrtal floods in 2021". In order to write down the proposal contained in the `README.md` in this project, I had to come up with some case study as an example in order to figure out our (=Nelen & Schuurmans) project setup. This is just *my* example: perhaps useful as input for the project.
+Note: Reinout, who writes this, hasn't heard anything about specific case studies, apart from "the Ahrtal floods in 2021". In order to write down the proposal contained in the `README.md` in this project, I had to come up with some case study as an example in order to figure out our (=Nelen & Schuurmans) project setup. This is just *my* example: perhaps useful as input for the project.
 
 As it is "my" example/proposal, I get to keep this document personal :-)
 
