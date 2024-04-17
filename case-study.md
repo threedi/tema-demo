@@ -35,3 +35,7 @@ Objective proper real-time flood calculations could really help here!
 I invite you to look at [this video](https://youtu.be/I1MU2Kdnn_s?si=J34Duojrtz6BMhu_&t=75), at that timestamp you'll see below picture. The rectangular section at the bottom left is the submerged railway bridge, the round section at the top is the station building.
 
 ![Kreuzberg example](kreuzberg1.png)
+
+You'll notice half the camping site blocking the railway bridge arches. To make the situation clearer, here's a picture of the same bridge from my 2015 vacation:
+
+![Kreuzberg bridge before the flood](kreuzberg-before.png)
