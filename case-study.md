@@ -39,3 +39,9 @@ I invite you to look at [this video](https://youtu.be/I1MU2Kdnn_s?si=J34Duojrtz6
 You'll notice half the camping site blocking the railway bridge arches. To make the situation clearer, here's a picture of the same bridge from my 2015 vacation:
 
 ![Kreuzberg bridge before the flood](kreuzberg-before.png)
+
+So feedback from drones could really help. Ideally, they would be able to (perhaps with human intervention) detect that a previously-passable arched bridge was transformed into practically a dam.
+
+Note that there are historical precedents for this situation! In 1910, one century earlier, a similar flood occurred. At that time, construction activities to extend the railway line in preparation of the first world war resulted in lots of driftwood that clogged many bridges in a similar destructive manner. See the pictures below (from the book "100 Jahre Dümpelfeld-Lissendorf-Jünkerath"):
+
+![Floods in 1910](1910-buch.png)
