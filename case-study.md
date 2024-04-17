@@ -45,3 +45,34 @@ So feedback from drones could really help. Ideally, they would be able to (perha
 Note that there are historical precedents for this situation! In 1910, one century earlier, a similar flood occurred. At that time, construction activities to extend the railway line in preparation of the first world war resulted in lots of driftwood that clogged many bridges in a similar destructive manner. See the pictures below (from the book "100 Jahre Dümpelfeld-Lissendorf-Jünkerath"):
 
 ![Floods in 1910](1910-buch.png)
+
+
+## 5: re-calculation based on new conditions
+
+What was previously an arched bridge might be turned into practically a dam due to half the camping site blocking the arches. This can be detected with drones **and fed back into 3Di**.
+
+Such a dam instead of a bridge will of course rapidly increase the downstream water levels. Timely warnings might be handy.
+
+
+## 6: reality
+
+In reality, no real warnings were issued. I personally assumed that the railway traffic, for instance, would have been stopped hours before matters got extreme. That was evidently not the case if we look at the Kreuzberg example.
+
+According to [this German forum message](https://www.eifelbahnforum.de/viewtopic.php?t=6396), the following occured:
+
+*Deutlich unangenehmer und gefährlicher wurde es übrigens für den Tfz-Führer des 620 045 in Kreuzberg/Ahr. Er hatte mit seinem Zug gerade den Bahnhof in Rtg. Remagen verlassen, als er sah, wie vor ihm die Ahrbrücke weggespült wurde. Eine Weiterfahrt war unmöglich. Er wechselte ans andere Zugende und sagte der Zugführerin Bescheid, sie solle die Reisenden schon mal im nahe gelegenen DB-Haus in Sicherheit bringen (das Bahnhofsgebäude war außer Betrieb). Als er den Zug abgestellt und gesichert hatte, stand das Wasser ebenfalls schon bis zu den Armlehnen der Sitze, aber anders als in Rheinbach mit starker Strömung und gefährlichem Treibgut. Durch eine geöffnete Tür konnte er sich zunächst auf eine Garage retten, aber die Flut stieg immer weiter und die Garage erzitterte schon, so dass er auf einen tief hängenden Ast klettern musste. Dort verbrachte er die nächsten 18 Stunden immer in der Angst, herunterzufallen oder der Baum würde auch weggespült.*
+
+Translated, a train departed the Kreuzberg station (the circle in the picture above) and the train driver noticed just in time that the bridge (the rectangle) had broken down... He backed up the train a few hundred meters and debarked the passengers. He even parked the train neatly on one of the side tracks. Afterwards he had to escape due to the fast moving water to the top of a garage and later to a tree branch where he had to spend the next 18 hours...
+
+![Parked train](parked-train.png)
+
+According to personal answers, the aformentioned train was probably scheduled to leave the station between 19:30 and 20:00. This could be used in the demo! My initial idea was to omit the train bridges from the equation "as the trains would have been shut down already", but apparently I was wrong.
+
+
+## 7: desired result
+
+I'd really like for the result to be something like this:
+
+- The predicted rainfall results in some pretty worrying simulated water levels in the Ahr valley.
+- The simulated water levels prompt drone activity, which result in changed characteristics of several bridges (turning them from partially-open bridges into practically dams)
+- The "dams" result in rapidly rising water levels, resulting in warnings for blocked main arteries like the Ahrtalbahn.
