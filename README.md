@@ -84,7 +84,7 @@ Such messages can be things like "area to really watch with drones".
 This way, whatever we do or calculate or determine can be made available through the context broker. There is a possibility of storing blobs of data in an internal "minio" object store, but our guess is that it is handier to just provide the URL to our s3 store for the results we've calculated, as that will be a non-firewalled URL, btw.
 
 
-## K3S part 3: visualisation docker
+## K3S part 3: status overview docker
 
 To make the process visible/observable, we propose a simple web interface that shows the current status from our point of view:
 
