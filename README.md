@@ -105,4 +105,4 @@ Our main focus is improving the actual "3Di" flood calcuation software. What I'm
 
 ## Possible case study
 
-I'm throwing in [a possible case study](case-study.md) just to make the possible data flows a bit more concrete.
+I'm throwing in [a possible case study](example-case-study/case-study.md) just to make the possible data flows a bit more concrete.
