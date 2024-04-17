@@ -18,6 +18,13 @@ I hope this document also helps other partners to get started. For that purpose,
 Both context broker ("CB") and the K3S cluster are hidden away behind a firewall, btw.
 
 
+## Setup
+
+The sketch below shows the suggested setup, followed by the textual explanation of the various parts. Basically we use the context broker in combination with a custom vocabulary + three small dockers inside the K3S cluster + our own S3 storage for shuttling info back and forth.
+
+![Sketch of the suggested setup](suggested-setup.png)
+
+
 ## Context broker: custom vocabulary
 
 In the context broker, we'll need to store information. Information that needs terms and definitions because of its "linked data" nature. So if we want to talk about a `RegionAtRisk`, we'll need to define.
