@@ -1,12 +1,7 @@
 # Reinout's case study/proposal
 
-Note: Reinout, who writes this, hasn't heard anything about specific case studies, apart from "the Ahrtal floods in 2021". In order to write down the proposal contained in the `README.md` in this project, I had to come up with some case study as an example in order to figure out our (=Nelen & Schuurmans) project setup. This is just *my* example: perhaps useful as input for the project.
+Note: Reinout, who writes this, hasn't heard anything about specific case studies, apart from "the Ahrtal floods in 2021". In order to write down the proposal contained in the `README.md` in this project, I had to come up with some case study as an example in order to figure out our (=Nelen & Schuurmans) project setup. This is just *my* hypothetical example: perhaps useful as input for the project.
 
-As it is "my" example/proposal, I get to keep this document personal :-)
-
-- I'm interested in the project because of the *context broker*: it connects me to the *semantic web* from my PhD years.
-- I'm very interested in railways in the Eifel region (of which the Ahrtal is a part). See [this youtube video](https://www.youtube.com/watch?v=EvDXScsPGvs) as an illustration.
-- I've actually studied the 2021 floods in the Ahrtal quite a lot.
 
 
 ## 1: excessive rainfall is detected
@@ -18,16 +13,16 @@ For the demo, the rainfall events or predictions should be put into the context 
 
 ## 2: flooding should be detected
 
-Based upon a good model of the landscape and a good rainfall prediction (=our input), a reasonable prediction of flood levels (=our output) should be possible.
+Based upon a good model of the landscape and a good rainfall prediction (=input for us), a reasonable prediction of flood levels (=output from us) should be possible.
 
 
 ## 3: detection of critical locations
 
 Based on the flood prediction, a prediction of critical locations could be made. I know N&S can do that, but perhaps a project partner can too. Flooding of railways, bridges or important roads ("Bundesstraße") or medical facilities comes to mind.
 
-Such critical locations could really benefit of real-time drone imagery and monitoring. In reality, the upper reaches of the Ahr valley were crying for help while the authorities in the lower reaches were suspecting them of panick-making. Their own official downstream measurement equipment never went beyond a certain worrying level as the equipment literally stopped reporting after being ripped out by the flood...
+Such critical locations could really benefit of real-time drone imagery and monitoring. In reality, the upper reaches of the Ahr valley were already dealing with a disaster even though the authorities in the lower reaches were not really aware of what was coming. Their own official downstream measurement equipment never went beyond a certain worrying level as the equipment literally stopped reporting after being ripped out by the flood...
 
-Objective proper real-time flood calculations could really help here!
+Objective proper real-time flood calculations could really have helped here!
 
 
 ## 4: feedback from critical locatons
@@ -40,18 +35,18 @@ You'll notice half the camping site blocking the railway bridge arches. To make 
 
 ![Kreuzberg bridge before the flood](kreuzberg-before.png)
 
-So feedback from drones could really help. Ideally, they would be able to (perhaps with human intervention) detect that a previously-passable arched bridge was transformed into practically a dam.
+So feedback from drones could really help. Ideally, they would be able to (perhaps with human intervention) detect that a previously-water-passable arched bridge was transformed into practically a dam.
 
-Note that there are historical precedents for this situation! In 1910, one century earlier, a similar flood occurred. At that time, construction activities to extend the railway line in preparation of the first world war resulted in lots of driftwood that clogged many bridges in a similar destructive manner. See the pictures below (from the book "100 Jahre Dümpelfeld-Lissendorf-Jünkerath"):
+Note that there are historical precedents for this situation! [In 1910](https://en.wikipedia.org/wiki/1910_European_Floods), one century earlier, a similar flood occurred. At that time, construction activities to [extend the Ahr valley railway](https://en.wikipedia.org/wiki/D%C3%BCmpelfeld%E2%80%93Lissendorf_railway) line resulted in lots of drifting construction materials that clogged many bridges in a similar destructive manner. See the pictures below (from the book "100 Jahre Dümpelfeld-Lissendorf-Jünkerath"):
 
 ![Floods in 1910](1910-buch.png)
 
 
 ## 5: re-calculation based on new conditions
 
-What was previously an arched bridge might be turned into practically a dam due to half the camping site blocking the arches. This can be detected with drones **and fed back into 3Di**.
+What was previously an arched bridge might be turned into practically a dam due to tree branches and especially campers from the camping site blocking the arches. This can be detected with drones **and fed back into 3Di**.
 
-Such a dam instead of a bridge will of course rapidly increase the downstream water levels. Timely warnings might be handy.
+Such a "dam" instead of a bridge will of course rapidly increase the downstream water levels. Timely warnings might be handy.
 
 
 ## 6: reality
@@ -66,13 +61,13 @@ Translated, a train departed the Kreuzberg station (the circle in the first pict
 
 ![Parked train](parked-train.png)
 
-According to personal answers, the aformentioned train was probably scheduled to leave the station between 19:30 and 20:00. This could be used in the demo! My initial idea was to omit the train bridges from the equation "as the trains would have been shut down already", but apparently I was wrong.
+According to personal answers, the aformentioned train was probably scheduled to leave the station between 19:30 and 20:00. This could perhaps be used in the demo! My initial idea was to omit the train bridges from the equation "as the trains would have been shut down already", but apparently I was wrong.
 
 
-## 7: desired result
+## 7: possible result
 
-I'd really like for the result to be something like this:
+The result could be something like this:
 
 - The predicted rainfall results in some pretty worrying simulated water levels in the Ahr valley.
 - The simulated water levels prompt drone activity, which result in changed characteristics of several bridges (turning them from partially-open bridges into practically dams)
-- The "dams" result in rapidly rising water levels, resulting in warnings for blocked main arteries like the Ahrtalbahn.
+- The "dams" result in rapidly rising water levels, resulting in warnings for blocked main traffic arteries like the Ahrtalbahn.
