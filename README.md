@@ -85,3 +85,8 @@ Our main focus is improving the actual "3Di" flood calcuation software. What I'm
 - Find or make a good vocabulary for adding what we need to the *context broker*.
 - A webserver that the context broker can send targeted messages to.
 - A script that feeds the context broker (and possibly the META minio storage) with updated content.
+
+
+## Possible case study
+
+I'm throwing in [a possible case study](case-study.md).
