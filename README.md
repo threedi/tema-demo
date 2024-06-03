@@ -19,10 +19,12 @@ access. The context broker ("CB") is publicly accessible (I'm not mentioning the
 
 ## Original setup idea from april
 
+Originally, I had a more elaborate setup in mind, based on the need to shuffle data to and from our regular data center. It turns out that everything can be much simpler, luckily.
+
 See the [previous version](original-setup-from-april2024.md).
 
 
-## Setup
+## New simpler setup
 
 The sketch below shows the suggested setup, followed by the textual explanation of the various parts. Basically we use the context broker in combination with two **small and simple** dockers inside the K3S cluster + the minio s3 storage.
 
