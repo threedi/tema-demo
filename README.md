@@ -33,88 +33,50 @@ The sketch below shows the suggested setup, followed by the textual explanation 
 
 In the context broker, we'll need to store information. Information that needs terms and definitions because of its "linked data" nature. Initially, I thought a proper defined custom "JSON-LD" vocabulary was necessary, but it turns out the context broker just accepts entities with a new type, so at least initially we don't need one.
 
-The three entity types that I expect to need:
+The three entity types that I expect to need or to write myself (just as a starting point for further discussion):
 
 
-TODo
+    FloodRiskEvent
+        id=some:urn:1234
+        region = ahr  (hardcoded at the moment)
+        rainfall = ....  (in mm/h)
+        rainfall_duration = ...  (in h)
+        (and probably some timestamp which should be build in)
 
-We'll start such a bare-bones vocabulary and host it somewhere public. If handy, others can extend it or start their own.
+    ElevationMap
+        id=some:urn:5678
+        flood_risk_event_id = some:urn:1234
+        minio_url = s3://....  (link to a geotiff)
 
-Some initial ideas (all with proper urls instead of just words, of course):
+    FloodCalculationResult
+        id=some:urn:8901
+        flood_risk_event_id = some:urn:1234
+        water_depth_minio_url = s3://..... (link to a geotiff)
+        other_results_minio_url = s3://..... (link to a geotiff)
 
-    weather-occurrence
-        id=abcd
-        region = ahr
-        timestamp = 2021-07-xx
-        rainfall-data = s3://amaazon.com/xxx/something.tiff
-
-    flood-calculation
-        weather-occurrence=http://tema.it/weather-occurrence/abcd
-        result=s3://amazon.com/s3/xxx/something.zip
-
-    disturbance
-        3di-scenario=https://www.3di.live/scenario/xyz
-        height=235
-        x1=...
-        y1=...
-        x2=...
-        y2=...
+- `FloodRiskEvent`: I've written a small form to fire off this event, but that might be another partner's job.
+- `ElevationMap`: DLR probably has to upload this after getting notified about a FloodRiskEvent. I'm planning to upload a coarse geotiff myself as a starting point just to get our use case to run initially. Afterwards a new ElevationMap can be uploaded and the calculation started with the new and improved data.
+- We'll react to the elevation map by starting a 3Di simulation and producing a `FloodCalculationResult` with some uploaded data in minio. Other partners can then use this for their calculations or visualisations.
 
 
-## K3S part 1a: *context broker* target 'flask' docker
+## Our flask docker: *context broker* target and task starter and overview website
 
-You can subscribe at the context broker for certain specific items. For instance a new `RegionAtRisk`. You have to provide a URL that the context broker can send its notification to.
+See https://github.com/HE-TEMA/flood-calculation-site
 
-We'll make a docker that contains a small [flask (python)](https://pypi.org/project/Flask/) webserver that serves as the "target URL" for the context broker. Apparently there already is a small example app available within the project, but I've only seen the filenames in a screenshot :-)
+We'll make a docker that contains a small [flask (python)](https://pypi.org/project/Flask/) webserver that serves as the "target URL" for the context broker. It is based on the small example app available within the project.
 
-There's the technical detail of subscribing. It depends on the behaviour of the context broker. Perhaps we can just re-register ourselves when the flask server starts up?
-
-(The flask docker will be registered through a kubernetes `deployment` yaml file. The details will have to be in some non-public repository, but once it works we'll probably put an example here.)
-
-
-## K3S part 1b: what the 'flask' docker does
-
-Custom scripting, installs of your own software: that's best handled on your own servers. At least, that's my line of thinking.
-
-So the 'flask' docker does this:
-
-- It gets the notifications from the context broker.
-- It converts them into some json instruction.
-- It uploads it to a company-specific S3 object store in an `inbox/` directory.
-- (Afterwards, our custom software will look in that directory and start up 3Di simulations and so).
+- CB subscription target for FloodRiskEvent and ElevationMap.
+- Small form to create FloodRiskEvent (DONE).
+- Some handy debug pages to browse the available entity types and entities in the CB (DONE).
+- Code to trigger the "task" docker below based on the two CB subscriptions.
 
 
-## K3S part 2: 'cronjob' script docker
+## Our "task" docker
 
-The next part will be a docker running some python script. It is started as a kubernetes `cronjob` resource, which means it is simply run once in a while (every minute for instance).
+Internally we use "Prefect", which looks a bit like airflow. In the end, it are just simple python scripts.
 
-The simple script will probably do this:
-
-- Look in our company-specific S3 object store in the `outbox/` directory.
-- Any messages/objects it finds there are posted to the context broker.
-
-Such messages can be things like "area to really watch with drones".
-
-This way, whatever we do or calculate or determine can be made available through the context broker. There is a possibility of storing blobs of data in an internal "minio" object store, but our guess is that it is handier to just provide the URL to our s3 store for the results we've calculated, as that will be a non-firewalled URL, btw.
-
-
-## K3S part 3: status overview docker
-
-To make the process visible/observable, we propose a simple web interface that shows the current status from our point of view:
-
-- It downloads a `status.json` from our company-specific S3 object store.
-- It shows what "our" infrastructure has received, what is being processed and what is ready.
-
-This docker is deployed as a `deployment` resource with a matching `service` and `ingress`. (In normal terms: a website with a url).
-
-
-## Summary
-
-Our main focus is improving the actual "3Di" flood calcuation software. What I'm describing here is what we (and probably lots of other partners) need to do to cooperate:
-
-- Find or make a good vocabulary for adding what we need to the *context broker*.
-- A webserver that the context broker can send targeted messages to.
-- A script that feeds the context broker (and possibly the META minio storage) with updated content.
+- One task uploads a simple elevation map geotiff + adds the event to the context broker.
+- The other task reacts to an ElevationMap, which means the FloodRiskEvent can now be converted into a 3di scenario. The scenario is uploaded to our regular 3Di data center in Amsterdam. Upon completion, we store the results in minio and in the context broker.
 
 
 ## Possible case study
