@@ -1,42 +1,19 @@
-# Implementation & collaboration plan Nelen & Schuurmans
+# Original proposed setup from april 2024
 
-*Note beforehand: the information here is a technical programmer's view of what needs to be done :-) It might not be totally in sync with the project's terminology and plans.*
-
-Within the [EU TEMA project](https://tema-project.eu/), [Nelen & Schuurmans](https://www.nelen-schuurmans.nl) is mainly involved with our [3Di hydrodynamic computation software](https://3diwatermanagement.com/), known as `PDM-tech-02` in the project. Our direct aim is to improve 3Di for disaster management.
-
-Disaster management also means collaboration, of course. For that purpose, TEMA has provided infrastructure and technology suggestions as a framework for collaboration. The implementation plan in this document shows how we want to use the infrastructure to be able to show a nice realistic demo in cooperation with partners.
-
-I hope this document also helps other partners to get started. For that purpose, it is my intention to keep most of the code open source (and thus visible), though there's a https://github.com/HE-TEMA github team now, so some of the repositories will be visible there.
-
-
-## Provided infrastructure
-
-- A **context broker** implemented in [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD). Basically a semantic web storage. I've written a [summary on my blog](https://reinout.vanrees.org/weblog/2024/04/16/tema-workshop-json-ld.html) of a TEMA workshop on that topic that should give a pretty good introduction. The context broker is the central information exchange mechanism for the whole project. If we need weather forecasts, we'll ask the CB to send us new ones added by other project partners. If we have flood calculation results, we'll put their info into the CB for others to query.
-- **K3S**, a simple but powerful kubernetes cluster. According to what I gathered, you can connect your own kubernetes nodes but you can also use the provided infrastructure. You can use it to run servers or scripts, provided you "dockerize" them and know how to deploy those dockers to the cluster.
-
-The K3S cluster is (rightfully so) hidden away behind a firewall, so you need VPN
-access. The context broker ("CB") is publicly accessible (I'm not mentioning the URL here as you have write access as anonoymous user :-) ).
-
-## Original setup idea from april
-
-See the [previous version](original-setup-from-april2024.md).
-
+My original idea below could be simplified, but I've retained the documentation as it might be handy in the future.
 
 ## Setup
 
-The sketch below shows the suggested setup, followed by the textual explanation of the various parts. Basically we use the context broker in combination with two **small and simple** dockers inside the K3S cluster + the minio s3 storage.
+The sketch below shows the suggested setup, followed by the textual explanation of the various parts. Basically we use the context broker in combination with a custom vocabulary + three **small and simple** dockers inside the K3S cluster + our own S3 storage for shuttling info back and forth.
 
-![Sketch of the suggested setup](suggested-setup2.jpg)
-
-
-## Context broker: custom types
-
-In the context broker, we'll need to store information. Information that needs terms and definitions because of its "linked data" nature. Initially, I thought a proper defined custom "JSON-LD" vocabulary was necessary, but it turns out the context broker just accepts entities with a new type, so at least initially we don't need one.
-
-The three entity types that I expect to need:
+![Sketch of the suggested setup](suggested-setup.png)
 
 
-TODo
+## Context broker: custom vocabulary
+
+In the context broker, we'll need to store information. Information that needs terms and definitions because of its "linked data" nature. So if we want to talk about a `RegionAtRisk`, we'll need to define.
+
+If there's already a suitable vocabulary, we can use it. But at first we're probably better off making our own "JSON-LD" vocabulary for our specific use case. That way we can store `https://our.vocabulary.org/v1/meta/RegionAtRisk=Ahrtal` in the context broker and add a subscription to that.
 
 We'll start such a bare-bones vocabulary and host it somewhere public. If handy, others can extend it or start their own.
 
