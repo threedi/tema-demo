@@ -12,10 +12,11 @@ I hope this document also helps other partners to get started. For that purpose,
 ## Provided infrastructure
 
 - A **context broker** implemented in [NGSI-LD](https://en.wikipedia.org/wiki/NGSI-LD). Basically a semantic web storage. I've written a [summary on my blog](https://reinout.vanrees.org/weblog/2024/04/16/tema-workshop-json-ld.html) of a TEMA workshop on that topic that should give a pretty good introduction. The context broker is the central information exchange mechanism for the whole project. If we need weather forecasts, we'll ask the CB to send us new ones added by other project partners. If we have flood calculation results, we'll put their info into the CB for others to query.
+- A **minio 's3' object storage** for storing (large) data.
 - **K3S**, a simple but powerful kubernetes cluster. According to what I gathered, you can connect your own kubernetes nodes but you can also use the provided infrastructure. You can use it to run servers or scripts, provided you "dockerize" them and know how to deploy those dockers to the cluster.
 
 The K3S cluster is (rightfully so) hidden away behind a firewall, so you need VPN
-access. The context broker ("CB") is publicly accessible (I'm not mentioning the URL here as you have write access as anonoymous user :-) ).
+access. The context broker ("CB") and minio are publicly accessible (I'm not mentioning the URL here as you have write access as anonoymous user to the CB :-) ).
 
 ## Original setup idea from april
 
@@ -39,26 +40,27 @@ The three entity types that I expect to need or to write myself (just as a start
 
 
     FloodRiskEvent
-        id=some:urn:1234
-        region = ahr  (hardcoded at the moment)
+        id = some:urn:1234
+        elevation_map_id = some:urn:1234
         rainfall = ....  (in mm/h)
         rainfall_duration = ...  (in h)
         (and probably some timestamp which should be build in)
 
     ElevationMap
-        id=some:urn:5678
-        flood_risk_event_id = some:urn:1234
-        minio_url = s3://....  (link to a geotiff)
+        id = some:urn:5678
+        # bucket and filename are in our minio.
+        bucket = "napels"
+        filename = ....
 
     FloodCalculationResult
-        id=some:urn:8901
+        id = some:urn:8901
         flood_risk_event_id = some:urn:1234
         water_depth_minio_url = s3://..... (link to a geotiff)
         other_results_minio_url = s3://..... (link to a geotiff)
 
-- `FloodRiskEvent`: I've written a small form to fire off this event, but that might be another partner's job.
-- `ElevationMap`: DLR probably has to upload this after getting notified about a FloodRiskEvent. I'm planning to upload a coarse geotiff myself as a starting point just to get our use case to run initially. Afterwards a new ElevationMap can be uploaded and the calculation started with the new and improved data.
-- We'll react to the elevation map by starting a 3Di simulation and producing a `FloodCalculationResult` with some uploaded data in minio. Other partners can then use this for their calculations or visualisations.
+- `FloodRiskEvent`: I've written a small form to fire off this event, but that might be another partner's job?
+- `ElevationMap`: DLR probably has to upload this, I'll upload an initial one myself.
+- We'll react to the flood risk event by starting a 3Di simulation and producing a `FloodCalculationResult` with some uploaded data in minio. Other partners can then use this for their calculations or visualisations.
 
 
 ## Our flask docker: *context broker* target and task starter and overview website
