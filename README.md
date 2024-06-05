@@ -29,7 +29,7 @@ See the [previous version](original-setup-from-april2024.md).
 
 The sketch below shows the suggested setup, followed by the textual explanation of the various parts. Basically we use the context broker in combination with two **small and simple** dockers inside the K3S cluster + the minio s3 storage.
 
-![Sketch of the suggested setup](suggested-setup2.jpg)
+![Sketch of the suggested setup](suggested-setup3.png)
 
 
 ## Context broker: custom types
