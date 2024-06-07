@@ -54,13 +54,16 @@ The three entity types that I expect to need or to write myself (just as a start
 
     FloodCalculationResult
         id = some:urn:8901
+        title = (the 3Di simulation name)
         flood_risk_event_id = some:urn:1234
-        water_depth_minio_url = s3://..... (link to a geotiff)
-        other_results_minio_url = s3://..... (link to a geotiff)
+        threedi_simulation = simulation ID, needed for contacting the 3Di api
+        threedi_schematisation_name = needed for contacting the 3Di api
+        maximum_waterdepth_bucket= "napels"
+        maximum_waterdepth_filename = filename in minio
 
 - `FloodRiskEvent`: I've written a small form to fire off this event, but that might be another partner's job?
 - `ElevationMap`: DLR probably has to upload this, I'll upload an initial one myself.
-- We'll react to the flood risk event by starting a 3Di simulation and producing a `FloodCalculationResult` with some uploaded data in minio. Other partners can then use this for their calculations or visualisations.
+- We'll react to the flood risk event by starting a 3Di simulation and producing a `FloodCalculationResult` with some uploaded data in minio *and* parameters for getting the complete data from the simulation out of the 3Di API. Other partners can then use this for their calculations or visualisations.
 
 
 ## Our flask docker: *context broker* target and task starter and overview website
