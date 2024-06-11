@@ -48,12 +48,14 @@ The three entity types that I expect to need or to write myself (just as a start
 
     ElevationMap
         id = some:urn:5678
+        title = "descriptive title"
         # bucket and filename are in our minio.
         bucket = "naples"
         filename = ....
 
     Maps4Flood (from "tech05")
         id = some:urn:5678
+        title = "descriptive title"
         # bucket and filename are in our minio.
         bucket = "naples"
         filename = ....
