@@ -36,24 +36,18 @@ The sketch below shows the suggested setup, followed by the textual explanation 
 
 In the context broker, we'll need to store information. Information that needs terms and definitions because of its "linked data" nature. Initially, I thought a proper defined custom "JSON-LD" vocabulary was necessary, but it turns out the context broker just accepts entities with a new type, so at least initially we don't need one.
 
-The three entity types that I expect to need or to write myself (just as a starting point for further discussion):
+The three entity types that I now use:
 
 
-    FloodRiskEvent
+    HistoricalFloodRiskEvent
         id = some:urn:1234
         elevation_map_id = some:urn:1234
         rainfall = ....  (in mm/h)
         rainfall_duration = ...  (in h)
+        bbox: str
         (and probably some timestamp which should be build in)
 
     ElevationMap
-        id = some:urn:5678
-        title = "descriptive title"
-        # bucket and filename are in our minio.
-        bucket = "naples"
-        filename = ....
-
-    Maps4Flood (from "tech05")
         id = some:urn:5678
         title = "descriptive title"
         # bucket and filename are in our minio.
@@ -69,8 +63,8 @@ The three entity types that I expect to need or to write myself (just as a start
         maximum_waterdepth_bucket= "napels"
         maximum_waterdepth_filename = filename in minio
 
-- `FloodRiskEvent`: I've written a small form to fire off this event, but that might be another partner's job?
-- `ElevationMap`: DLR probably has to upload this, I'll upload an initial one myself.
+- `HistoricalFloodRiskEvent`: I've written a small form to fire off this event for my own test purposes, normally it is created based on an incoming `Alert`.
+- `ElevationMap`: we don't really need this anymore (Oct 2025). Big maps can't be uploaded to the minio. We use the one that's uploaded to our own software.
 - We'll react to the flood risk event by starting a 3Di simulation and producing a `FloodCalculationResult` with some uploaded data in minio *and* parameters for getting the complete data from the simulation out of the 3Di API. Other partners can then use this for their calculations or visualisations.
 
 
@@ -80,18 +74,17 @@ See https://github.com/HE-TEMA/flood-calculation-site
 
 We'll make a docker that contains a small [flask (python)](https://pypi.org/project/Flask/) webserver that serves as the "target URL" for the context broker. It is based on the small example app available within the project.
 
-- CB subscription target for FloodRiskEvent and ElevationMap.
-- Small form to create FloodRiskEvent (DONE).
-- Some handy debug pages to browse the available entity types and entities in the CB (DONE).
-- Code to trigger the "task" docker below based on the two CB subscriptions.
+- CB subscription target for Alert and HistoricalFloodRiskEvent.
+- Small form to create HistoricalFloodRiskEvent .
+- Some handy debug pages to browse the available entity types and entities in the CB.
+- Code to trigger the "task" docker below based on a CB subscription.
 
 
 ## Our "task" docker
 
 Internally we use "Prefect", which looks a bit like airflow. In the end, it are just simple python scripts.
 
-- One task uploads a simple elevation map geotiff + adds the event to the context broker.
-- The other task reacts to an ElevationMap, which means the FloodRiskEvent can now be converted into a 3di scenario. The scenario is uploaded to our regular 3Di data center in Amsterdam. Upon completion, we store the results in minio and in the context broker.
+- The main current task downloads the proper geotiff images from the relevant simulation results.
 
 
 ## Possible case study
