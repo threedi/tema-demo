@@ -87,6 +87,6 @@ Internally we use "Prefect", which looks a bit like airflow. In the end, it are 
 - The main current task downloads the proper geotiff images from the relevant simulation results.
 
 
-## Possible case study
+## Possible case studies
 
-I'm throwing in [a possible case study](example-case-study/case-study.md) just to make the possible data flows a bit more concrete.
+I'm throwing in [two possible case studies](example-case-study/README.md) just to make the possible data flows a bit more concrete.

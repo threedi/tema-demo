@@ -1,4 +1,4 @@
-# Reinout's case study/proposal
+# "Kreuzberg station" case study
 
 Note: Reinout, who writes this, hasn't heard anything about specific case studies, apart from "the Ahrtal floods in 2021". In order to write down the proposal contained in the `README.md` in this project, I had to come up with some case study as an example in order to figure out our (=Nelen & Schuurmans) project setup. This is just *my* hypothetical example, it is not an official case study that we'll use. I've included it as an illustration, but it might be useful as input for the project.
 
