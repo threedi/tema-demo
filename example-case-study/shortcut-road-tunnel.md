@@ -4,7 +4,7 @@ To the east of Altenahr, at the top right in below map, a road bridge provided a
 
 ![](blockage-at-bridge-left-and-shortcut-tunnel-right.png)
 
-(Black: railway, blue: big bend in the Ahr river, red arrow top right: the road tunnel.)
+(Black: railway, blue: big bend in the Ahr river, red arrow top right: the road tunnel.) (Bottom left stuff: [see other case study](https://github.com/threedi/tema-demo/blob/main/example-case-study/case-study.md).)
 
 ## Situation
 
