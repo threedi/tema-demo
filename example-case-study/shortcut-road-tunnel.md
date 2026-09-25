@@ -8,13 +8,13 @@ To the east of Altenahr, at the top right in below map, a road bridge provided a
 
 ## Situation
 
-<a title="Ogmios, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:2021-08-21_Altenahr_04.jpg"><img width="330" alt="2021-08-21 Altenahr 04" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/2021-08-21_Altenahr_04.jpg/330px-2021-08-21_Altenahr_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"></a>
+![Landesarchiv Baden-Württemberg, Staatsarchiv Freiburg W 134 Nr. 024164c / Fotograf: Willy Pragher, CC BY 4.0 ](https://upload.wikimedia.org/wikipedia/commons/9/98/Altenahr-_Tunnels_bei_Altenahr_%28Engelslay-I-Tunnel%2C_Engelslay-II-Tunnel_und_Stra%C3%9Fentunnel%2C_Westportale%29_-_LABW_-_Staatsarchiv_Freiburg_W_134_Nr._024164b.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original)
 
 The image above shows the situation, viewed towards the east, with the two railway tunnels (the left one is currently a cycling path) and, situated a bit lower to the right, the road tunnel.
 
 The image below shows the situation after the flood:
 
-![Ogmios, CC0, via Wikimedia Commons"](https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/2021-08-21_Altenahr_04.jpg/1024px-2021-08-21_Altenahr_04.jpg?20210823094213)
+![Ogmios, CC0, via Wikimedia Commons"](https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/2021-08-21_Altenahr_04.jpg/960px-2021-08-21_Altenahr_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail)
 
 
 ## The flood in 2021
